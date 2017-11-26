@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  web:
+    build: .
+    user: "node"
+    volumes:
+      - ".:/home/node/app:delegated"
+      - "/home/node/app/node_modules"
+    environment:
+      VIRTUAL_HOST: "flowerpower.divio.me"
+    ports:
+      - "8888:8888"
+      - "3000:3000"
